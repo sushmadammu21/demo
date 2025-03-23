@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revathi Selwyn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Revathi Selwyn
+                <style>.logo {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px; /* Space between the logo and text */
+                }
+                .logo img {
+                    width: 100px; /* Adjust the width as needed */
+                    height: 50px; /* Maintain aspect ratio */
+                }
+                .logo span {
+                    font-size: 18px; /* Adjust the font size as needed */
+                    font-weight: bold;
+                }
+                </style>
+            </div>
+            
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Books.html">Books</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="audiobooks.html">Audio Books</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+        </ul>
+        <button class="menu-toggle">&#9776;</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+        <h1>The Sunday Times</h1>
+        <h2>Number One Bestseller</h2>
+        </section>
+        <section class="book-section">
+            <div class="book-wrapper book-low">
+            <div class="book-card">
+                <img src="https://i.ibb.co/VYswg0Ht/Image-20250303-150144-253.jpg" alt="Image-20250303-150144-253" ></a>     
+                <h3>How to stop time</h3>
+            <p>3 min read | November, 2020</p>
+                </div>
+            </div>
+            <div class="book-wrapper book-high">
+            <div class="book-card">
+                <img src="https://i.ibb.co/Mkck5zks/Image-20250303-150143-324.jpg" alt="Image-20250303-150143-324" border="0"></a>
+                <h3>The comfort book</h3>
+                <p>3 min read | November, 2020</p>
+            </div>
+            
+            </div>
+            <div class="book-wrapper book-low">
+            <div class="book-card">
+                <img src="https://i.ibb.co/jBq0NMj/Whats-App-Image-2025-03-18-at-13-43-18-1.jpg" alt="Image-20250303-150143-787" border="0"></a>    
+            <h3>The humans</h3>
+            <p>4 min read | November, 2020</p>
+            </div>
+            </div>
+            <div class="book-wrapper book-high">
+            <div class="book-card">
+                <img src="https://i.ibb.co/KzqKF42D/avacado.jpg" alt="Image-20250303-150144-103" border="0"></a>
+                <h3>Reasons to stay alive</h3>
+                <p>1 min read | November, 2020</p>
+            </div>
+            
+            </div>
+        </section> 
+    </main>
+    <section class="book-availability">
+        <h2><span>Books</span> are available on</h2>
+        <div class="retailer-logos">
+            <img src="https://i.ibb.co/VW6jHHnb/af5b7fa2209bcc7a292823cb213f5e9d.jpg" alt="af5b7fa2209bcc7a292823cb213f5e9d" border="0">
+            <img src="https://i.ibb.co/VW6jHHnb/af5b7fa2209bcc7a292823cb213f5e9d.jpg" alt="af5b7fa2209bcc7a292823cb213f5e9d" border="0">
+            <img src="https://i.ibb.co/VW6jHHnb/af5b7fa2209bcc7a292823cb213f5e9d.jpg" alt="af5b7fa2209bcc7a292823cb213f5e9d" border="0">
+            <img src="https://i.ibb.co/VW6jHHnb/af5b7fa2209bcc7a292823cb213f5e9d.jpg" alt="af5b7fa2209bcc7a292823cb213f5e9d" border="0">
+            <img src="https://i.ibb.co/VW6jHHnb/af5b7fa2209bcc7a292823cb213f5e9d.jpg" alt="af5b7fa2209bcc7a292823cb213f5e9d" border="0">
+
+        </div>
+    </section>
+        <!-- Daily Bible Verse Section -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bible Verse</title>
+        </head>
+        <body>
+            <div id="verse-section" class="section">
+                <div id="verse-container">
+                    <div id="loading" class="loading">Loading...</div>
+                    <div id="verse-content" class="hidden">
+                        <h2 id="verse-title" class="verse-title"></h2>
+                        <p id="verse-description" class="verse-description"></p>
+                    </div>
+                </div>
+            </div>
+            <style>
+            #verse-section {
+                text-align: center;
+                background: white;
+                color: rgb(14, 15, 15);
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+        
+            #verse-container {
+                position: relative;
+            }
+        
+            .loading {
+                font-size: 1.2em;
+                color: #555;
+            }
+        
+            .hidden {
+                display: none;
+            }
+        
+            .verse-title {
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 10px;
+                color: rgb(12, 13, 13);
+        
+            }
+        
+            .verse-description {
+                font-size: 1.5em;
+                color: rgb(8, 8, 8);
+        
+            }
+            </style>
+            <script>
+            async function fetchDailyVerse() {
+                const verseContainer = document.getElementById('verse-container');
+                const loading = document.getElementById('loading');
+                const verseContent = document.getElementById('verse-content');
+                const verseTitle = document.getElementById('verse-title');
+                const verseDescription = document.getElementById('verse-description');
+        
+                // Show loading indicator
+                loading.classList.remove('hidden');
+                verseContent.classList.add('hidden');
+        
+                try {
+                    // Add a cache-busting query parameter
+                    const cacheBuster = `cacheBuster=${new Date().getTime()}`;
+                    const response = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vS00wul7sAmVDLK99NUMiBDHYrLBMX-l5l8cb88JGp3pF55-5hF6AQaAsTtqd7g3jHJmrT9zZ2HjY5D/pub?gid=0&single=true&output=csv&${cacheBuster}`);
+                    const text = await response.text();
+        
+                    const rows = text.split('\n').map(row => row.split(','));
+        
+                    // Remove the header row
+                    const verses = rows.slice(1);
+        
+                    if (verses.length > 0) {
+                        const verseToDisplay = verses[0]; // Change index or logic as needed
+                        verseTitle.innerText = verseToDisplay[0].trim();
+                        verseDescription.innerText = verseToDisplay[1].trim();
+                    } else {
+                        verseTitle.innerText = 'No verses available.';
+                    }
+        
+                    // Hide loading indicator and show content
+                    loading.classList.add('hidden');
+                    verseContent.classList.remove('hidden');
+        
+                } catch (error) {
+                    console.error('Error fetching the daily verse:', error);
+                    verseTitle.innerText = 'Error loading verse. Please try again later.';
+                    loading.classList.add('hidden');
+                    verseContent.classList.remove('hidden');
+                }
+            }
+        
+            // Fetch the daily verse when the page loads
+            fetchDailyVerse();
+        
+            // Set an interval to fetch the verse every 30 seconds
+            setInterval(fetchDailyVerse, 30000); // 30000 ms = 30 seconds
+            </script>
+        </body>
+        </html>
+
+
+
+    <!--author-->
+    <section class="giving-section" class="section giving-section">
+        <div class="container">
+            <div class="giving-content">
+                <div class="qr-code">
+                    <img src="https://i.ibb.co/nqSsQX92/image-0.jpg" alt="image-0" >
+                </div>
+                <div class="text-content">
+                        <h2>Dr. Revathi Selwyn</h2>
+                        <p>
+                            Dr. Revathi Selwyn lives in Hyderabad with her husband and has two sons. She loves nature, birds, and animals. Her love for nature and animals stems from her childhood days when she lived in a village surrounded by fields, forests, and other animals. The challenges and experiences that everything God created have a purpose inspired her to write books for children.
+                        </p>
+                        <button class="support-button">KNOW MORE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- book section-->
+        
+            <style>
+                
+        
+                .music-collection-section {
+                    display: flex;
+                    gap: 20px;
+                    width: 100%;
+                    max-width: auto;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    padding: 150px 100px;
+                    background-color: #f9e9f1;
+                }
+        
+                .music-item {
+                    background: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                    text-align: center;
+                    width: 100%;
+                    max-width: 200px;
+                    transition: transform 0.3s ease;
+                    position: relative;
+                }
+        
+                .music-number {
+                    font-size: 14px;
+                    color: #888;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    background: #f0f0f0;
+                    padding: 5px 10px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                }
+        
+                .music-details {
+                    padding: 50px 10px 20px;
+                }
+        
+                .music-details h3 {
+                    font-size: 16px;
+                    margin: 10px 0;
+                    color: #333;
+                }
+        
+                .music-details p {
+                    font-size: 14px;
+                    color: #666;
+                    margin-bottom: 10px;
+                }
+        
+                .image-container {
+                    position: relative;
+                    display: inline-block;
+                }
+        
+                .image-container img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    display: block;
+                    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+                    position: relative;
+                    z-index: 2;
+                }
+        
+                .image-container::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: inherit;
+                    filter: blur(10px);
+                    opacity: 0.8;
+                    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                    z-index: 1;
+                }
+        
+                .image-container:hover::before {
+                    filter: blur(40px);
+                    opacity: 1;
+                }
+        
+                .image-container::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                    height: 40px;
+                    background: inherit;
+                    filter: blur(15px);
+                    opacity: 0.5;
+                    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                    z-index: 0;
+                }
+        
+                .image-container:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+                }
+        
+                .image-container:hover::after {
+                    filter: blur(25px);
+                    opacity: 0.7;
+                }
+        
+                .image-container:hover img {
+                    transform: scale(1.1);
+                    filter: brightness(1.1);
+                }
+                .music-item {
+                    animation: float 3s ease-in-out infinite;
+                }
+                .music-item:active,
+                .music-item:focus {
+                    transform: scale(1);
+                }
+                .music-item:active img,
+                .music-item:focus img {
+                    transform: scale(1);
+                    filter: brightness(1);
+                }
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .music-collection-section {
+                        padding: 10px;
+                    }
+                    .music-item {
+                        max-width: 45%;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .music-item {
+                        max-width: 100%;
+                    }
+                }
+            </style>
+        <section class="music-collection-section">
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Bubble Pop">
+                    </div>
+                    <h3>Bubble pop</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Love Me">
+                    </div>
+                    <h3>Love me</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Love Me">
+                    </div>
+                    <h3>Love me</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Love Me">
+                    </div>
+                    <h3>Love me</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Love Me">
+                    </div>
+                    <h3>Love me</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Billy Cullum">
+                    </div>
+                    <h3>Billy cullum</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+            <div class="music-item">
+                <div class="music-details">
+                    <div class="image-container">
+                        <img src="https://i.ibb.co/d0jz7hJ9/images-q-tbn-ANd9-Gc-Q8h1y2x-Gxcqj-s-Pjm-Aa-yon-Pz-DEe0jo-Hd-CP0-RTv-CFpe-CWvn-VQSXXUf5-IHrb-KJFQq8.jpg" alt="Candy Bar Creep">
+                    </div>
+                    <h3>Candy bar creep</h3>
+                    <p>Kim Hyun A</p>
+                </div>
+            </div>
+        </section>
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <section class="newsletter">
+                <h2><em>Subscribe</em> to my <br> <strong>newsletter</strong></h2>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">→</button>
+                </form>
+                <p style="    font-style: italic;    color: #8e8686; font-size:small;">By signing up you agree with our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>. To opt out, click unsubscribe in my emails.</p>
+                <script>
+                    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+                      e.preventDefault();
+                      const emailInput = this.querySelector('input[type="email"]');
+                      const email = emailInput.value;
+                  
+                      fetch('https://script.google.com/macros/s/AKfycbxupTJpckl_HfksHYZNg9duq3OwVuYiu37z-32NwdlxJ_JQl96GjNNtS78TYUfk8snbxw/exec', { // Replace with your Google Apps Script URL
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            
+                          'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `email=${encodeURIComponent(email)}`
+                      }).then(() => {
+                        alert('Thank you for subscribing!');
+                        emailInput.value = '';
+                      }).catch(err => {
+                        alert('There was an error. Please try again.');
+                        console.error(err);
+                      });
+                    });
+                  </script>
+                  
+            </section>
+        </div>
+        <div class="newsletter-image">
+            <img src="https://i.ibb.co/4R2cTcW5/elin-melaas-2tvii-Xahtl-Y-unsplash.jpg" ></a>      
+        </div>
+    </section>
+<!-- Footer 
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h2 class="footer-logo">Revathi Selwyn</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="be-first-circle">
+                BE THE<br>FIRST TO<br>KNOW
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>About</h3>
+            <ul>
+                <li><a href="about.html">My Story</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Shop </h3>
+            <ul>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Clothing</a></li>
+                <li><a href="#">Stationery</a></li>
+                <li><a href="#">Tattoos</a></li>
+                <li><a href="#">Wholesale</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Connect </h3>
+            <ul>
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">Rupi Kaur Live</a></li>
+                <li><a href="#">The Traveling Book</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">Music</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Help</h3>
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="contact.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-section">
+        <p>&copy; 2015, Rupi Kaur | Website developed by laurieCodes.com</p>
+    </div>
+    <div class="right-section">
+        <a href="#">Terms of Use</a> &middot;
+        <a href="#">Privacy Policy</a>
+    </div>
+</footer>-->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column left-column">
+            <p class="footer-heading">SAY HELLO</p>
+            <h2 class="email">Hello@matthaig.com</h2>
+        </div>
+        <div class="footer-column right-columns">
+            <div class="footer-column">
+                <p class="footer-heading">SAMARITANS</p>
+                <p><a href="mailto:jo@samaritans.org">jo@samaritans.org</a></p>
+                <p>0300 123 3393</p>
+            </div>
+            <div class="footer-column">
+                <p class="footer-heading">MIND INFOLINE</p>
+                <p><a href="mailto:info@mind.org.uk">info@mind.org.uk</a></p>
+                <p>0808 802 5544</p>
+            </div>
+        </div>
+    </div>
+    <hr class="footer-line">
+    <div class="footer-bottom">
+        <p>Copyright © 2025 — Ebin tech. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <style>
+        .footer {
+            background: #004c4c;
+            color: #ffffff;
+            padding: 40px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        .left-column {
+            flex: 1;
+        }
+        .right-columns {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+        }
+        .footer-heading {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #f8f5f5;
+        }
+        .email {
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .footer-column a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer-line {
+            border: 0.5px solid #333;
+            margin: 20px 0;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+
+        .social-icons a:hover {
+            color: #aaaaaa;
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .right-columns {
+                justify-content: center;
+            }
+        }
+    </style>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

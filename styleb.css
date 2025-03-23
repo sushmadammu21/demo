@@ -1,0 +1,177 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    background-color: rgba(102, 178, 178);
+    line-height: 1.6;
+}
+
+/* Responsive Container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 150px;
+}
+
+/* Responsive Navbar */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive Giving Section */
+
+
+.giving-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.qr-code {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.qr-code img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.text-content {
+    flex: 1;
+    text-align: justify;
+    padding: 0 15px;
+    min-width: 250px;
+}
+
+.text-content h2 {
+    font-size: clamp(24px, 4vw, 48px);
+    margin-bottom: 15px;
+}
+
+.text-content p {
+    font-size: clamp(14px, 3vw, 18px);
+    margin-bottom: 20px;
+}
+
+.support-button {
+    padding: 12px 24px;
+    font-size: clamp(14px, 3vw, 18px);
+    border-radius: 30px;
+}
+
+/* Responsive Footer */
+
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+
+    .text-content {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0;
+    }
+    .qr-code {
+        margin-bottom: 10px;
+    }
+
+    .text-content {
+        margin-top: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Prevent horizontal scroll and ensure full-width fit on mobile */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Optional: Also handle containers that might cause overflow */
+  .background, .form-container {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  

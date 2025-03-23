@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupi Kaur Website</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <header>
+        <nav class="navbar">
+          <div class="logo">Revathi Selwyn</div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Books.html">Books</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="audiobooks.html">Audio Books</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+          </ul>
+          <button class="menu-toggle">&#9776;</button>
+        </nav>
+      </header>
+    <section class=" giving-section">
+        <div class="container">
+            <div class="giving-content">
+                <div class="qr-code">
+                    <img src="https://i.ibb.co/zVzKH1Dk/Rupi-Kaur-About-Me-2.webp" alt="Rupi-Kaur-About-Me-2" border="0"></a>
+                </div>
+                <div class="text-content">
+                    <h2>       </h2>
+                    <h1></h1>
+                    <h1></h1>
+                        <h2>Milk and Honey 10th Anniversary Collector's Edition</h2>
+                        <p>A 10th anniversary collector's edition of the bestselling poetry collection <em>Milk and Honey</em>. This edition includes a new cover, an exclusive new chapter of poetry, a new introduction, heartfelt letters from Rupi to her readers, and more.</p>
+                        <button class="support-button">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- contact form -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .background {
+        background-image: url('https://i.ibb.co/TDHN20X7/aesthetic-book-desktop-wv3k504hp9qzsi3i.jpg'); /* Add your image path here */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .background::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(10px); /* Apply blur effect */
+        z-index: 1;
+      }
+      .form-container {
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for the form */
+        padding: 20px 40px;
+        border-radius: 20px;
+        z-index: 2;
+        position: relative;
+        width: 40%; /* Set form width to 40% of the screen */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+      }
+      .form-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+      }
+      .input,
+      .textarea {
+        transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border and shadow */
+        border-radius: 15px;
+      }
+      .input:focus,
+      .textarea:focus {
+        border-color: #6dada6; /* Change color as needed */
+        box-shadow: 0 0 5px rgba(171, 176, 175, 0.5); /* Add shadow on focus */
+      }
+      .button.is-primary {
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+      }
+      .button.is-primary:hover {
+        background-color: #59a79c; /* Change color as needed */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+      #message {
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
+      }
+      /* Responsive */
+      @media screen and (max-width: 1024px) {
+        .form-container {
+          width: 60%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .form-container {
+          width: 80%;
+          padding: 25px 20px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .form-title {
+          font-size: 28px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <form id="form" class="form-container" method="POST">
+        <div class="form-title" style="font-size: 40px; font-weight: bold;">Contact Us</div>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder=" Name"
+              name= "Name"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input
+              class="input"
+              type="email"
+              placeholder="Your Email"
+              name="Email"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Category</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="Category" value="Books" /> Books
+            </label>
+            <label class="radio">
+              <input type="radio" name="Category" value="AudioBooks" /> AudioBooks
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Feedback/Suggestions"
+              name="Message"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" type="submit" id="submit-button">
+              SUBMIT
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: rgb(185, 178, 138);
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: black transparent;
+      "
+    ></div>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwiLF51FaODsH4l18WwPhVLdKKfhDC2CwmW8v9ZqQA1b3JjxIqAaQ3sE0X7qn1W_5-T/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+    </script>
+  </body>
+</html>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-column left-column">
+              <p class="footer-heading">SAY HELLO</p>
+              <h2 class="email">Hello@matthaig.com</h2>
+          </div>
+          <div class="footer-column right-columns">
+              <div class="footer-column">
+                  <p class="footer-heading">SAMARITANS</p>
+                  <p><a href="mailto:jo@samaritans.org">jo@samaritans.org</a></p>
+                  <p>0300 123 3393</p>
+              </div>
+              <div class="footer-column">
+                  <p class="footer-heading">MIND INFOLINE</p>
+                  <p><a href="mailto:info@mind.org.uk">info@mind.org.uk</a></p>
+                  <p>0808 802 5544</p>
+              </div>
+          </div>
+      </div>
+      <hr class="footer-line">
+      <div class="footer-bottom">
+          <p>Copyright © 2025 — Ebin tech. All Rights Reserved.</p>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+      <style>
+          .footer {
+              background: #004c4c;
+              color: #ffffff;
+              padding: 40px 20px;
+              font-family: 'Poppins', sans-serif;
+          }
+  
+          .footer-container {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              flex-wrap: wrap;
+              text-align: left;
+              max-width: 1200px;
+              margin: 0 auto;
+          }
+  
+          .footer-column {
+              flex: 1;
+              min-width: 200px;
+              margin-bottom: 20px;
+          }
+  
+          .left-column {
+              flex: 1;
+          }
+  
+          .right-columns {
+              display: flex;
+              justify-content: flex-end;
+              flex: 1;
+          }
+  
+          .footer-heading {
+              font-size: 12px;
+              text-transform: uppercase;
+              font-weight: 600;
+              letter-spacing: 1px;
+              color: #f8f5f5;
+          }
+  
+          .email {
+              font-size: 40px;
+              font-weight: bold;
+              margin-top: 10px;
+          }
+  
+          .footer-column a {
+              color: #ffffff;
+              text-decoration: none;
+          }
+  
+          .footer-line {
+              border: 0.5px solid #333;
+              margin: 20px 0;
+          }
+  
+          .footer-bottom {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding-top: 10px;
+              font-size: 14px;
+          }
+  
+          .social-icons a {
+              color: #ffffff;
+              font-size: 18px;
+              margin-left: 15px;
+          }
+  
+          .social-icons a:hover {
+              color: #aaaaaa;
+          }
+  
+          /* 📱 Responsive Design */
+          @media (max-width: 768px) {
+              .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+              }
+  
+              .footer-bottom {
+                  flex-direction: column;
+                  text-align: center;
+              }
+  
+              .social-icons {
+                  margin-top: 10px;
+              }
+  
+              .right-columns {
+                  justify-content: center;
+              }
+          }
+      </style>
+  </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

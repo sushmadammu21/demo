@@ -1,0 +1,951 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:  rgba(102,178,178);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color:  #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    margin-bottom: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-actions span {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px; /* Reduced padding to move text up */
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 1;
+    height: 350px; /* Reduced height to keep text higher */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Moves text towards the top */
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+    margin-bottom: 10px; /* Adds slight spacing */
+    color: #4a4545c0;
+    font-family:owners;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: #343232c0;
+    font-family:owners;
+
+
+}
+
+/* Adjust book section to prevent too much overlap */
+.book-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 60px 40px;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+  /* Book Cards */
+  .book-card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+}
+
+  
+  /* Exact Book Alignment */
+  .book-low {
+    transform: translateY(20px); /* Books 1 & 3 */
+  }
+  
+  .book-high {
+    transform: translateY(-20px); /* Books 2 & 4 */
+  }
+  
+  .book-card img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .book-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 10px ;
+
+  }
+  
+  .book-card p {
+    color: #555;
+    margin: 5px 10px;
+  }
+  /* Reduce the gap between h3 and p */
+.book-wrapper h3 {
+    margin: 15px 0 5px 0; /* Less space between title and description */
+    color: #1c1919;
+}
+
+.book-wrapper p {
+    margin: 0; /* No extra margin below description */
+    color: #141010;
+
+}
+  /* 📌 RESPONSIVE DESIGN */
+  
+  /* 📱 Mobile: Stack Books */
+  @media (max-width: 768px) {
+    .book-section {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: -100px; /* Adjust overlap for smaller screens */
+    }
+  
+    .hero {
+      height: 250px; /* Reduce hero height */
+    }
+    
+  }
+  
+  /* 📺 Tablet: Two Books Per Row */
+  @media (max-width: 1024px) {
+    .book-section {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: -120px;
+    }
+    
+  }
+  
+  /* 📣 Small Phones: Single Column */
+  @media (max-width: 500px) {
+    .book-section {
+      grid-template-columns: 1fr;
+      margin-top: -80px; /* Less overlap on small screens */
+    }
+    
+    }
+  .book-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+    margin-top: -200px; /* Overlap hero section */
+}
+
+/* Book Wrapper to structure Image + Text */
+.book-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Book Card with Only Image */
+.book-card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+}
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+/* Exact Book Alignment */
+.book-low {
+    transform: translateY(20px); /* Books 1 & 3 move down */
+}
+
+.book-high {
+    transform: translateY(-20px); /* Books 2 & 4 move up */
+}
+
+/* Book Image */
+.book-card img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Title & Description Alignment */
+.book-wrapper h3,
+.book-wrapper p {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Move text to match book alignment */
+.book-low h3,
+.book-low p {
+    transform: translateY(10px); /* Move text slightly down */
+}
+
+.book-high h3,
+.book-high p {
+    transform: translateY(-10px); /* Move text slightly up */
+}
+
+/* 📌 RESPONSIVE DESIGN */
+
+/* 📱 Mobile: Stack Books */
+@media (max-width: 768px) {
+    .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: -100px; /* Adjust overlap for smaller screens */
+    }
+}
+
+/* 📺 Tablet: Two Books Per Row */
+@media (max-width: 1024px) {
+    .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: -120px;
+    }
+}
+
+/* 📣 Small Phones: Single Column */
+@media (max-width: 500px) {
+    .book-section {
+        grid-template-columns: 1fr;
+        margin-top: -80px; /* Less overlap on small screens */
+    }
+}
+
+.book-availability {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 50px;
+}
+.book-availability h2 {
+    color: #ccc;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.book-availability h2 span {
+    font-weight: bold; /* "Books" in bold */
+}
+.retailer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Adjust spacing between logos */
+    margin-top: 15px;
+    white-space: nowrap;
+    flex-wrap: nowrap; /* Prevents wrapping to next line */
+    overflow: hidden;
+}
+.retailer-logos img {
+    height: 30px; /* Adjust based on design */
+    max-width: 100px; /* Prevents logos from being too large */
+    transition: filter 0.3s ease-in-out;
+}
+.retailer-logos img:hover {
+    filter: brightness(1); /* Brightens on hover */
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Newsletter Section */
+.newsletter-section {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f4f1;
+    padding: 200px 100px; /* Increased padding */
+    box-sizing: border-box;
+}
+
+.newsletter-content {
+    width: 50%;
+    padding: 40px;
+}
+
+.newsletter-content h2 {
+    font-size: 3rem;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+.newsletter-content h2 span {
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+
+}
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* Slightly increased spacing */
+}
+
+.newsletter-form input {
+    width: 80%;
+    padding: 15px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    padding: 12px 18px; /* Increased button padding */
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.newsletter-image {
+    width: 50%;
+}
+
+.newsletter-image img {
+    width: 100%;
+}
+.newsletter-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.giving-section {
+    padding: 150px 100px;
+    background-color: #E3FEF7;
+}
+
+.giving-content {
+    display: flex;
+    align-items: Justify;
+    justify-content: space-between;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.qr-code img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+    transition: transform 0.5s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.03);
+}
+
+.text-content {
+    flex: 1;
+    margin-left: 3.125rem;
+}
+
+.text-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.text-content h2:hover {
+    color: #135D66;
+    border-bottom: 2px solid #003C43;
+}
+
+.text-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.support-button {
+    background-color: #135D66;
+    color: #E3FEF7;
+    border: none;
+    padding: 0.5375rem 1.475rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    border-radius: 1.875rem;
+}
+
+.support-button:hover {
+    background-color: #135D66;
+    transform: scale(1.03);
+}
+
+.newsletter-section {
+    padding: 3.75rem 3.25rem;
+    background-color: #E3FEF7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.love-notes {
+    font-size: 1rem;
+    color: #003C43;
+}
+footer {
+    background-color: #135D66;
+    color: #E3FEF7;
+    padding: 3.75rem 1.25rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.footer-logo {
+    font-family: "Times New Roman", serif;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.social-icons a {
+    color: #E3FEF7;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #77B0AA;
+}
+
+.footer-column h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column a {
+    color: #E3FEF7;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #E3FEF7;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .book-grid {
+        flex-direction: column;
+    }
+
+    .main-book {
+        max-width: 100%;
+        margin-bottom: 1.875rem;
+    }
+
+    .right-books {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-section {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .email-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .giving-content {
+        flex-direction: column;
+        text-align: justify;
+        padding: 0px;
+    }
+
+    .text-content {
+        margin-left: 0;
+        margin-top: 1.875rem;
+    }
+
+    .qr-code img {
+        height: auto;
+    }
+}
+/* Bible verse */
+#verse-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#verse-section #verse-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 0;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+#verse-section #verse-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    z-index: 1;
+}
+  #verse-section #verse-container .verse {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+  
+  #verse-section #verse-container .scripture {
+    font-size: 3em;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  #verse-section #verse-container span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 📱 Mobile: Stack Books */
+@media (max-width: 768px) {
+    .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: -100px; /* Adjust overlap for smaller screens */
+    }
+
+    .hero {
+        height: 250px; /* Reduce hero height */
+        padding: 40px 20px;
+    }
+
+    .newsletter-section {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .newsletter-content, .newsletter-image {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 📺 Tablet: Two Books Per Row */
+@media (max-width: 1024px) {
+    .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: -120px;
+    }
+    .giving-content {
+        flex-direction: column;
+        text-align: justify;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+/* 📣 Small Phones: Single Column */
+@media (max-width: 500px) {
+    .book-section {
+        grid-template-columns: 1fr;
+        margin-top: -80px; /* Less overlap on small screens */
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .book-card {
+        max-width: 90%;
+    }
+
+    .retailer-logos {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Responsive Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Responsive Book Sections */
+@media (max-width: 1024px) {
+    .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .book-card img {
+        height: 250px;
+    }
+}
+
+/* Responsive Book Availability */
+@media (max-width: 768px) {
+    .retailer-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .retailer-logos img {
+        max-height: 40px;
+        margin: 5px;
+    }
+}
+
+/* Responsive Newsletter Section */
+@media (max-width: 1024px) {
+    .newsletter-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-content,
+    .newsletter-image {
+        width: 100%;
+        padding: 0;
+    }
+
+    .newsletter-form {
+        justify-content: center;
+    }
+}
+
+/* Responsive Books Section */
+@media (max-width: 1024px) {
+    .books-section .book-grid {
+        flex-direction: column;
+    }
+
+    .books-section .main-book,
+    .books-section .right-books {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .books-section .right-books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .books-section .right-books {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive Giving Section */
+@media (max-width: 768px) {
+    .giving-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .qr-code, .text-content {
+        width: 100%;
+        margin: 0px 0;
+    }
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: backdrop-filter 0.3s ease;
+}
+
+.navbar.blur {
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust opacity for visibility */
+}
+/* Prevent horizontal scroll and ensure full-width fit on mobile */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Optional: Also handle containers that might cause overflow */
+  .background, .form-container {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
